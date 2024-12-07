@@ -5,16 +5,16 @@ import UserPage from "./pages/UserPage";
 import LayoutPage from "./layout/LayoutPage";
 import AuthUser from "./auth/AuthUser";
 
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./firebase/Config";
-// import UserAuthStore from "./store/authUserStore";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { auth } from "./firebase/Config";
+import UserAuthStore from "./store/authUserStore";
 
 
 function App() {
 
 
-  const getUser = useAuthState(auth);
-  // const getUser = UserAuthStore((state: any) => state.user)
+  // const getUser = useAuthState(auth);
+  const getUser = UserAuthStore((state: any) => state.user)
 
   console.log(getUser)
   return (
