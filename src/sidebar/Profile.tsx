@@ -40,7 +40,8 @@ const Profile = () => {
         // bg={{ base: "white", _dark: "black" }}
         p={2}
       >
-        <Avatar src={getUser?.profileUrl} size={'lg'} /><Text fontFamily={'cursive'} >{getUser?.username}</Text>
+        <Avatar src={getUser?.profileUrl} size={'lg'} />
+        <Text fontFamily={'cursive'} display={{ base: 'none', md: 'block' }}>{getUser?.username}</Text>
       </Link>
     </Box>
   )

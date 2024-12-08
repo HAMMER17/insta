@@ -15,10 +15,11 @@ const Home = () => {
         display={"flex"} alignItems={"center"} gap={4}
         _hover={{ bg: 'gray.700', color: 'white' }}
         borderRadius={6}
+        // display={{ base: "block", md: "none" }}
         // bg={{ base: "white", _dark: "black" }}
         p={4}
       >
-        <FaHome size={25} /> <Text >Home</Text>
+        <FaHome size={25} /> <Text display={{ base: 'none', md: 'block' }}>Home</Text>
       </Link>
     </Box >
   )

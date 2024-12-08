@@ -32,14 +32,15 @@ const Create = () => {
 
   return (
     <>
-      <Box p={2}>
-        <Box display={"flex"} alignItems={"center"} gap={4}
+      <Box p={2} >
+        <Box alignItems={"center"} gap={4}
+          display={'flex'}
           _hover={{ bg: "gray.700", color: 'white' }}
           borderRadius={6}
           cursor={'pointer'}
           p={4} onClick={() => setOpen(pre => !pre)}
         >
-          <BsFillPostcardFill size={25} /><Text >Create</Text>
+          <BsFillPostcardFill size={25} /><Text display={{ base: 'none', md: 'block' }}>Create</Text>
         </Box>
       </Box>
 

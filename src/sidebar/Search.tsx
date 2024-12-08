@@ -29,7 +29,7 @@ const Search = () => {
           onClick={() => setOpen(pre => !pre)}
           p={4}
         >
-          <FaSearch size={25} /><Text >Search</Text>
+          <FaSearch size={25} /><Text display={{ base: 'none', md: 'block' }}>Search</Text>
         </Box>
       </Box>
       <DialogRoot lazyMount open={open} placement={'center'}
