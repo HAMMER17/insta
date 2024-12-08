@@ -1,10 +1,11 @@
-import { Box, Link, Text } from "@chakra-ui/react"
+import { Box, Text } from "@chakra-ui/react"
+import { Link } from "react-router-dom";
 import { Avatar } from "@/components/ui/avatar"
 import { auth, db } from "@/firebase/Config"
 import { onAuthStateChanged } from "firebase/auth"
 import { doc, getDoc } from "firebase/firestore"
 import { useState, useEffect } from "react"
-// import logo from '@/assets/cat.jpg'
+
 const Profile = () => {
   const [getUser, setGetUser] = useState<any>()
   // console.log(getUser.profileUrl)
@@ -34,14 +35,15 @@ const Profile = () => {
       p={2}
     // display={{ base: "block", md: "none" }}
     >
-      <Link href={`/${getUser?.username}`} display={"flex"} alignItems={"center"} gap={4}
-        _hover={{ bg: "gray.700", color: 'white' }}
-        borderRadius={6}
-        // bg={{ base: "white", _dark: "black" }}
-        p={2}
-      >
-        <Avatar src={getUser?.profileUrl} size={'lg'} />
-        <Text fontFamily={'cursive'} display={{ base: 'none', md: 'block' }}>{getUser?.username}</Text>
+      <Link to={`/${getUser?.username}`} >
+        <Box display={"flex"} alignItems={"center"} gap={4}
+          _hover={{ bg: "gray.700", color: 'white' }}
+          borderRadius={6}
+          p={2}>
+          <Avatar src={getUser?.profileUrl} size={'lg'} />
+          <Text fontFamily={'cursive'} display={{ base: 'none', md: 'block' }}>{getUser?.username}</Text>
+        </Box>
+
       </Link>
     </Box>
   )

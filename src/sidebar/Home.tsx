@@ -1,7 +1,7 @@
 
-// import { Tooltip } from "@/components/ui/tooltip"
-import { Box, Text, Link } from "@chakra-ui/react"
+import { Box, Text } from "@chakra-ui/react"
 import { FaHome } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 
 
@@ -11,15 +11,15 @@ const Home = () => {
     // display={{ base: "block", md: "none" }}
     >
 
-      <Link href="/"
-        display={"flex"} alignItems={"center"} gap={4}
-        _hover={{ bg: 'gray.700', color: 'white' }}
-        borderRadius={6}
-        // display={{ base: "block", md: "none" }}
-        // bg={{ base: "white", _dark: "black" }}
-        p={4}
+      <Link to={'/'}
       >
-        <FaHome size={25} /> <Text display={{ base: 'none', md: 'block' }}>Home</Text>
+        <Box display={"flex"} alignItems={"center"} gap={4}
+          _hover={{ bg: "gray.700", color: 'white' }}
+          borderRadius={6}
+          p={4}>
+          <FaHome size={25} /> <Text display={{ base: 'none', md: 'block' }}>Home</Text>
+        </Box>
+
       </Link>
     </Box >
   )
