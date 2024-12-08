@@ -6,23 +6,30 @@ import LayoutPage from "./layout/LayoutPage";
 import AuthUser from "./auth/AuthUser";
 
 // import { useAuthState } from "react-firebase-hooks/auth";
-// import { auth } from "./firebase/Config";
+import { auth } from "./firebase/Config";
+import { useEffect } from "react";
 import UserAuthStore from "./store/authUserStore";
+import { onAuthStateChanged } from "firebase/auth";
 
 
 function App() {
 
 
   // const getUser = useAuthState(auth);
-  const getUser = UserAuthStore((state: any) => state.user)
-
-  console.log(getUser)
+  const { fetchUserStore, user }: any = UserAuthStore()
+  useEffect(() => {
+    const unSab = onAuthStateChanged(auth, (user) => {
+      fetchUserStore(user?.uid)
+    })
+    return () => unSab();
+  }, [fetchUserStore])
+  // console.log(user)
   return (
     <LayoutPage>
       <Routes>
-        <Route path="/" element={getUser ? <HomePage /> : <Navigate to={'/auth'} />} />
+        <Route path="/" element={user ? <HomePage /> : <Navigate to={'/auth'} />} />
         <Route path="/:username" element={<UserPage />} />
-        <Route path="/auth" element={!getUser ? <AuthUser /> : <Navigate to={'/'} />} />
+        <Route path="/auth" element={!user ? <AuthUser /> : <Navigate to={'/'} />} />
       </Routes>
     </LayoutPage>
   )

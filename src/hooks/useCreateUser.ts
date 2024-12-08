@@ -50,7 +50,7 @@ const useCreateUser = () => {
         createdAt: Date.now()
       }
       await setDoc(doc(db, "users", newUser?.user.uid), setUserDoc);
-      localStorage.setItem('user-info', JSON.stringify(setUserDoc))
+      // localStorage.setItem('user-info', JSON.stringify(setUserDoc))
       setUserStore(setUserDoc)
     } catch (error) {
       console.log(error)
