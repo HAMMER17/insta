@@ -40,7 +40,8 @@ const Create = () => {
           cursor={'pointer'}
           p={4} onClick={() => setOpen(pre => !pre)}
         >
-          <BsFillPostcardFill size={25} /><Text display={{ base: 'none', md: 'block' }}>Create</Text>
+          <BsFillPostcardFill size={25} />
+          <Text display={{ base: 'none', md: 'block' }}>Create</Text>
         </Box>
       </Box>
 
@@ -48,7 +49,7 @@ const Create = () => {
         onOpenChange={(e) => setOpen(e.open)}>
         <DialogContent>
           <DialogHeader p={2}>
-            <DialogTitle>Create Post</DialogTitle>
+            <DialogTitle fontFamily={'fantasy'}>Create Post</DialogTitle>
           </DialogHeader>
           <DialogBody p={4}>
             <form  >

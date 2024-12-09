@@ -26,7 +26,7 @@ const ProfilePost = ({ post }: any) => {
   // const [isOpen, setIsOpen] = useState<any>(false)
   const [open, setOpen] = useState(false)
   const userProfile = ProfileUserStore((state: any) => state.userProfile);
-
+  console.log(post.id)
   const [isDeleting, setIsDeleting] = useState(false);
   const deletePost = UserPostStore((state: any) => state.deletePost);
   const decrementPostsCount = ProfileUserStore((state: any) => state.deletePost);
@@ -96,7 +96,7 @@ const ProfilePost = ({ post }: any) => {
 
       <DialogRoot lazyMount open={open} size={'xl'} placement="center"
         onOpenChange={(e) => setOpen(e.open)} >
-        <DialogContent >
+        <DialogContent p={2}>
           <DialogBody p={4} >
             <Flex gap='2' flexDirection={{ base: 'column', md: 'row' }}
               mx={"auto"} maxH={"90vh"} minH={"50vh"}

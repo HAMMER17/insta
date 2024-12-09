@@ -53,7 +53,7 @@ const PostFooter = ({ post, creatorProfile }: any) => {
 
         <DialogContent>
           <DialogHeader p={4}>
-            <DialogTitle>Comments</DialogTitle>
+            <DialogTitle fontFamily={'cursive'} color={'red.400'}>Comments</DialogTitle>
           </DialogHeader>
           <DialogCloseTrigger />
           <DialogBody p={2}>
