@@ -39,6 +39,7 @@ const NavBar = () => {
             src={data?.profileUrl}
             css={ringCss}
             cursor={'pointer'}
+            _hover={{ colorPalette: 'red' }}
           />
           <Text fontFamily={'cursive'} textStyle="xs" p={1}>{data.username}</Text>
         </Link>

@@ -18,6 +18,7 @@ const useDeletePost = () => {
 
 
   const handleDeletePost = async ({ post }: any) => {
+    console.log(post)
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     if (isDeleting) return;
 
@@ -35,6 +36,7 @@ const useDeletePost = () => {
       decrementPostsCount(post.id);
       Toaster({ type: "success", title: "Post deleted successfully" });
     } catch (error) {
+      console.log(error)
       Toaster({ type: 'error', title: 'Delete post wrong' });
     } finally {
       setIsDeleting(false);

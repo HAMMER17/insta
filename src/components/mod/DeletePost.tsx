@@ -56,7 +56,7 @@ const DeletePost = ({ post, open, setOpen }: any) => {
 
 
               </Flex>
-              <VStack alignItems={"flex-start"} flex={2} maxH={"350px"} overflowY={"auto"}>
+              <VStack key={post.id} alignItems={"flex-start"} flex={2} maxH={"350px"} overflowY={"auto"}>
                 {post?.caption && <Caption post={post} key={post.id} />}
                 {post?.comments?.map((comment: any) => (
 
