@@ -26,14 +26,14 @@ const ProfilePost = ({ post }: any) => {
   // const [isOpen, setIsOpen] = useState<any>(false)
   const [open, setOpen] = useState(false)
   const userProfile = ProfileUserStore((state: any) => state.userProfile);
-  console.log(post.id)
+  // console.log(userProfile)
   const [isDeleting, setIsDeleting] = useState(false);
   const deletePost = UserPostStore((state: any) => state.deletePost);
   const decrementPostsCount = ProfileUserStore((state: any) => state.deletePost);
   const authUser = UserAuthStore((state: any) => state.user);
-
+  // console.log(authUser)
   const handleDeletePost = async () => {
-    console.log(post)
+    // console.log(post)
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     if (isDeleting) return;
 
@@ -120,7 +120,7 @@ const ProfilePost = ({ post }: any) => {
                     </Text>
                   </Flex>
                   <Box _hover={{ color: 'red' }} cursor={'pointer'}>
-                    <RiDeleteBin2Fill size={25} onClick={handleDeletePost} />
+                    {authUser.username === userProfile.username ? <RiDeleteBin2Fill size={25} onClick={handleDeletePost} /> : ''}
                   </Box>
 
 

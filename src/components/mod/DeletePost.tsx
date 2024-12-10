@@ -23,6 +23,7 @@ const DeletePost = ({ post, open, setOpen }: any) => {
 
   // const [open, setOpen] = useState(false)
   const userProfile = ProfileUserStore((state: any) => state.userProfile);
+  console.log(userProfile)
   const { handleDeletePost } = useDeletePost()
   return (
     <DialogRoot lazyMount open={open} size={'xl'} placement="center"
@@ -51,7 +52,7 @@ const DeletePost = ({ post, open, setOpen }: any) => {
                   </Text>
                 </Flex>
                 <Box _hover={{ color: 'red' }} cursor={'pointer'}>
-                  <RiDeleteBin2Fill size={25} onClick={handleDeletePost} />
+                  {userProfile && <RiDeleteBin2Fill size={25} onClick={handleDeletePost} />}
                 </Box>
 
 
